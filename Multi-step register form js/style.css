@@ -12,5 +12,34 @@ body {
 :root {
     --main-color: #c41e67;
     --dark-color: #c41e67;
-    --
+    --step-color: #8312cf;
+    --step-size: 32px;
+
+}
+
+
+body {
+    height: 100vh;
+    display:grid;
+    place-items: center; 
+    background-color: lavender;
+    color: blue;
+
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+
+/* styles for the form */ 
+
+.form-wizard {
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+    width: min(600px, 80%);
+    box-shadow: 0 4px 16px rgba(167, 21, 84, 0.1);
+
 }
