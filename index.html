@@ -10,9 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>
-    try { if (localStorage.getItem("athena-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}
-  </script>
+  <script src="theme-init.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -21,7 +19,7 @@
     <div class="greek-key" aria-hidden="true"></div>
     <div class="nav-shell">
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a>
+        <a class="active" href="#home" aria-current="page">Home</a><a href="#about">About</a><a href="#menu">Menu</a>
       </nav>
 
       <a class="brand" href="#home" aria-label="Athena Greek Coffee House â€” home">
@@ -44,13 +42,14 @@
       </div>
     </div>
 
-    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation" hidden>
+      <a href="#home" aria-current="page">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="main-content">
     <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-media" src="assets/athena-hero.webp" alt="A traditional Greek coffee house with a porcelain coffee cup, water glass, and brass briki on a marble table">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="eyebrow">Athens, Greece Â· Since 1965</p>
