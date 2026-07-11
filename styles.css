@@ -244,27 +244,76 @@ button,a{
   border-color:var(--ink);
   transform:translateY(-2px)
 }
-.theme-icon{
+.theme-icon-lamp{
   position:absolute;
-  width:19px;
+  width:27px;
+  height:27px;
+  overflow:visible;
   fill:none;
   stroke:currentColor;
   stroke-linecap:round;
   stroke-linejoin:round;
-  stroke-width:1.6;
-  transition:opacity .22s,transform .26s
+  stroke-width:1.35
 }
-.theme-icon-moon{
+.lamp-fire{
+  transform-origin:16px 16px;
+  filter:drop-shadow(0 0 3px rgba(224,173,92,.9));
+  animation:lamp-flicker 1.8s ease-in-out infinite;
+  transition:opacity .28s ease,transform .32s ease,filter .28s ease
+}
+.lamp-flame{
+  fill:#e39a2f;
+  stroke:#8d5418
+}
+.lamp-flame-core{
+  fill:#ffd67d;
+  stroke:none
+}
+.lamp-wick{
+  stroke-width:1.6
+}
+.lamp-bowl{
+  fill:rgba(182,134,61,.2)
+}
+.lamp-smoke{
   opacity:0;
-  transform:rotate(-30deg) scale(.5)
+  stroke:currentColor;
+  stroke-dasharray:2.5 2;
+  transform:translateY(3px);
+  transition:opacity .2s ease
 }
-[data-theme="dark"] .theme-icon-sun{
+[data-theme="dark"] .lamp-fire{
   opacity:0;
-  transform:rotate(60deg) scale(.5)
+  filter:none;
+  animation:none;
+  transform:translateY(4px) scale(.08)
 }
-[data-theme="dark"] .theme-icon-moon{
-  opacity:1;
-  transform:none
+[data-theme="dark"] .lamp-smoke{
+  animation:lamp-smoke 1.15s ease-out both
+}
+@keyframes lamp-flicker{
+  0%,100%{
+    transform:rotate(-1deg) scale(1)
+  }
+  45%{
+    transform:rotate(1.5deg) scale(.94,1.04)
+  }
+  70%{
+    transform:rotate(-.5deg) scale(1.03,.97)
+  }
+}
+@keyframes lamp-smoke{
+  0%{
+    opacity:0;
+    transform:translateY(3px)
+  }
+  28%{
+    opacity:.72
+  }
+  100%{
+    opacity:0;
+    transform:translateY(-4px)
+  }
 }
 .menu-toggle{
   display:none;
