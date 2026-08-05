@@ -1,0 +1,318 @@
+/* =====================================================
+   reviews.css – Athena Reviews Page
+   ===================================================== */
+
+/* ── Hero ── */
+.reviews-hero {
+  padding: 160px 28px 60px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--deep) 0%, var(--paper) 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.reviews-hero h1 {
+  margin: 0 0 20px;
+  font: 400 clamp(3.2rem, 6vw, 5.5rem)/0.9 var(--serif);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.reviews-hero h1 em {
+  color: var(--gold);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.reviews-copy {
+  max-width: 500px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.65;
+}
+
+/* ── Flourish ── */
+.flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px auto 20px;
+  color: var(--gold);
+  font-size: 1rem;
+  opacity: 0.7;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+}
+
+.flourish span {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+  display: block;
+}
+
+.flourish span:nth-child(2) {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  background: none;
+  opacity: 1;
+  font-size: 1.2rem;
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.reviews-hero .flourish {
+  margin: 12px auto 16px;
+}
+
+/* ── Reviews Grid ── */
+.reviews-section {
+  padding: 60px 28px 40px;
+}
+
+.reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* ── Review Card ── */
+.review-card {
+  padding: 28px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-card-name {
+  color: var(--ink);
+  font: 500 1.1rem var(--serif);
+}
+
+.review-card-stars {
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.review-card-text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.review-card-date {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ── Add Review ── */
+.add-review-section {
+  padding: 40px 28px 80px;
+}
+
+.add-review-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-review-card {
+  padding: 36px 32px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.add-review-card h2 {
+  margin: 0 0 4px;
+  color: var(--ink);
+  font: 500 1.5rem var(--serif);
+}
+
+.add-review-card p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ── Form ── */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font: 500 0.8rem var(--sans);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: 0.9rem var(--sans);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(182, 134, 61, 0.12);
+}
+
+textarea.form-input {
+  resize: vertical;
+  font-family: var(--sans);
+}
+
+/* ── Star Rating ── */
+.star-rating {
+  display: flex;
+  gap: 6px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.star-rating .star {
+  color: var(--line);
+  transition: color 0.2s, transform 0.2s;
+  user-select: none;
+}
+
+.star-rating .star.active {
+  color: var(--gold);
+}
+
+.star-rating .star:hover {
+  transform: scale(1.15);
+}
+
+/* ── Button ── */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--wine);
+  color: var(--paper);
+  border: none;
+  border-radius: 6px;
+  font: 600 0.9rem var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #5a1e14;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(120, 40, 30, 0.25);
+}
+
+/* ── Empty State ── */
+.empty-reviews {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+
+.empty-reviews .empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.empty-reviews h3 {
+  margin: 0 0 4px;
+  color: var(--ink);
+  font: 500 1.2rem var(--serif);
+}
+
+.empty-reviews p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .reviews-hero {
+    padding: 130px 20px 40px;
+  }
+
+  .reviews-section {
+    padding: 40px 16px 20px;
+  }
+
+  .add-review-section {
+    padding: 20px 16px 60px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .add-review-card {
+    padding: 24px 18px;
+  }
+
+  .star-rating {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .review-card {
+    padding: 20px 16px;
+  }
+
+  .add-review-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .flourish {
+    max-width: 200px;
+    gap: 10px;
+  }
+
+  .flourish span:nth-child(2) {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+}
