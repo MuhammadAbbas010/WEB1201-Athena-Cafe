@@ -17,17 +17,17 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header class="site-header" data-header>
-    <div class="greek-key" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="greek-key"></div>
     <div class="nav-shell">
-      <nav class="desktop-nav" aria-label="Primary navigation">
+      <nav class="desktop-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="reservation.html" class="active" aria-current="page">Reservation</a>
+        <a href="reservation.html" class="active">Reservation</a>
       </nav>
 
-      <a class="brand" href="index.html" aria-label="Athena Greek Coffee House – home">
-        <span class="brand-mark" aria-hidden="true">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
           <span class="laurel">⧫</span>
           <span class="helmet">Α</span>
           <span class="laurel laurel-right">⧫</span>
@@ -37,15 +37,17 @@
         <span class="brand-est"><i></i>Est. 1965<i></i></span>
       </a>
 
-      <nav class="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
+      <nav class="desktop-nav desktop-nav-right">
         <a href="reviews.html">Reviews</a>
         <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
       </nav>
 
+      <!-- SVG IMPORTED FROM WAYNE-->
+
       <div class="header-actions">
-        <button class="circle-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
-          <svg class="theme-icon-lamp" viewBox="0 0 32 32" aria-hidden="true">
+        <button class="circle-button theme-toggle" type="button" id="theme-toggle">
+          <svg class="theme-icon-lamp" viewBox="0 0 32 32">
             <g class="lamp-fire">
               <path class="lamp-flame" d="M16 3.2c.3 3.2-3 4.8-3 8.1 0 2.1 1.3 3.8 3 4.7 1.7-.9 3-2.6 3-4.7 0-2.8-2.2-4.7-3-8.1Z"></path>
               <path class="lamp-flame-core" d="M16 8.2c-.2 1.6-1.3 2.4-1.3 3.8 0 .9.5 1.7 1.3 2.2.8-.5 1.3-1.3 1.3-2.2 0-1.3-.9-2.2-1.3-3.8Z"></path>
@@ -57,16 +59,16 @@
             <path class="lamp-foot" d="M12 25.6v1.3h8v-1.3M10 28.1h12"></path>
           </svg>
         </button>
-        <button class="circle-button menu-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <button class="circle-button menu-toggle" type="button" id="menu-toggle">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation" hidden>
+    <nav class="mobile-nav" id="mobile-nav" hidden>
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
-      <a href="reservation.html" aria-current="page">Reservation</a>
+      <a href="reservation.html">Reservation</a>
       <a href="reviews.html">Reviews</a>
       <a href="team.html">Team</a>
       <a href="contact.html">Contact</a>
@@ -74,55 +76,119 @@
   </header>
 
   <main id="main-content">
-    <section class="register-hero" aria-labelledby="reservation-title">
+    <section class="register-hero">
       <p class="eyebrow">Reserve Your Experience</p>
-      <h1 id="reservation-title">Register <em>Now</em></h1>
-      <div class="flourish" aria-hidden="true"><span></span>✦<span></span></div>
+      <h1>Register <em>Now</em></h1>
+      <div class="flourish"><span></span>✦<span></span></div>
       <p class="reservation-copy">Complete your registration to reserve a table at Athena.</p>
     </section>
 
-    <section class="reservation-form" aria-label="Registration form">
+    <section class="reservation-form">
       <div class="form-container">
         <div class="form-card">
           <div class="progress"><div id="bar"></div></div>
+          
           <form id="form">
+            <!-- Step 1 -->
             <div class="step active">
-              <h2>Step 1 - Account</h2>
-              <label>First Name<input id="fname"></label>
-              <label>Last Name<input id="lname"></label>
-              <label>Email<input id="email" type="email"></label>
-              <button type="button" id="n1">Next</button>
+              <h2>Step 1 - Account Details</h2>
+              
+              <label for="fname">First Name</label>
+              <input id="fname" name="fname" type="text" placeholder="e.g. John" required>
+              <span class="error-msg" id="fname-err"></span>
+
+              <label for="lname">Last Name</label>
+              <input id="lname" name="lname" type="text" placeholder="e.g. Doe" required>
+              <span class="error-msg" id="lname-err"></span>
+
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="John@gmail.com" required>
+              <span class="error-msg" id="email-err"></span>
+
+              <button type="button" id="n1" class="btn">Next</button>
             </div>
+
+            <!-- Step 2 -->
             <div class="step">
-              <h2>Step 2 - Personal</h2>
-              <label>Phone<input id="phone"></label>
-              <label>Date of Birth<input id="dob" type="date"></label>
-              <label>Favourite Coffee<input id="coffee"></label>
-              <button type="button" class="back">Back</button>
-              <button type="button" id="n2">Next</button>
+              <h2>Step 2 - Personal Preferences</h2>
+              
+              <label for="phone">Phone Number (Greek)</label>
+              <div class="phone-input-group">
+                <span class="prefix">+30</span>
+                <input id="phone" name="phone" type="tel" maxlength="10" placeholder="6912345678" required>
+              </div>
+              <span class="error-msg" id="phone-err"></span>
+
+              <label for="dob">Date of Birth</label>
+              <input id="dob" name="dob" type="date" required>
+              <span class="error-msg" id="dob-err"></span>
+
+              <label for="coffee">Security question: Favourite Coffee</label>
+              <select id="coffee" name="coffee" required>
+                <option value="">Select a coffee option...</option>
+                <option value="Greek Traditional">Traditional Greek Coffee</option>
+                <option value="Cappucino">Cappucino</option>
+                <option value="Metaxa Coffee">Metaxa Coffee</option>
+                <option value="Espresso">Espresso</option>
+                <option value="Freddo Espresso">Freddo Espresso</option>
+                <option value="Freddo Cappucino">Freddo Cappucino</option>
+                <option value="Cold Brew">Cold Brew</option>
+
+              </select>
+              <span class="error-msg" id="coffee-err"></span>
+
+              <div class="button-group">
+                <button type="button" class="back btn-sec">Back</button>
+                <button type="button" id="n2" class="btn">Next</button>
+              </div>
             </div>
+
+            <!-- Step 3 -->
             <div class="step">
               <h2>Step 3 - Security</h2>
-              <label>Password<input id="pass" type="password"></label>
-              <label>Confirm Password<input id="confirm" type="password"></label>
-              <label><input id="terms" type="checkbox"> I agree to the terms</label>
-              <button type="button" class="back">Back</button>
-              <button type="button" id="register">Register</button>
+              
+              <label for="pass">Password</label>
+              <input id="pass" name="pass" type="password" placeholder="At least 8 characters" required>
+              <span class="error-msg" id="pass-err"></span>
+
+              <label for="confirm">Confirm Password</label>
+              <input id="confirm" name="confirm" type="password" placeholder="Re-enter password" required>
+              <span class="error-msg" id="confirm-err"></span>
+
+              <label class="checkbox-label">
+                <input id="terms" name="terms" type="checkbox"> I agree to the terms & conditions
+              </label>
+              <span class="error-msg" id="terms-err"></span>
+
+              <div class="button-group">
+                <button type="button" class="back btn-sec">Back</button>
+                <button type="button" id="register" class="btn">Register</button>
+              </div>
             </div>
           </form>
+
+          <!-- Login Screen -->
           <div id="login" class="hidden">
             <h2>Registration Successful</h2>
-            <label>Email<input id="loginEmail"></label>
-            <label>Password<input id="loginPass" type="password"></label>
-            <button id="loginBtn">Login</button>
+            <p class="subtext">Please log in with your newly registered credentials.</p>
+            
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" name="loginEmail" type="email">
+            
+            <label for="loginPass">Password</label>
+            <input id="loginPass" name="loginPass" type="password">
+            
+            <button type="button" id="loginBtn" class="btn">Login</button>
+            <div id="greeting" class="greeting-box hidden"></div>
           </div>
+
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer" id="contact">
-    <div class="footer-branch" aria-hidden="true">⧫ ─────── ⧫</div>
+    <div class="footer-branch">⧫ ─────── ⧫</div>
     <a class="footer-brand" href="index.html">Athena</a>
     <p>Greek coffee, Turkish Style warm company, timeless tradition.</p>
     <div class="footer-details">
@@ -130,7 +196,7 @@
       <a href="mailto:hello@athenacoffee.example">athenacoffee@gmail.com</a>
       <span>Athens · Greece</span>
     </div>
-    <p class="copyright">© <span data-year></span> Athena Greek Coffee House</p>
+    <p class="copyright">© <span id="current-year"></span> Athena Greek Coffee House</p>
   </footer>
 
   <script src="js/script.js"></script>
