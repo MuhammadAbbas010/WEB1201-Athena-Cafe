@@ -83,7 +83,7 @@ function validateStep2() {
 
   if (dob) {
   const birthYear = new Date(dob).getFullYear();
-  if (birthYear < 1931 && birthYear > 2014) {
+  if (birthYear < 1931 || birthYear > 2014) {
     document.getElementById("dob-err").textContent = "Please enter a birth year of 1931 or later, and earlier than 2014";
     isValid = false;
   }
