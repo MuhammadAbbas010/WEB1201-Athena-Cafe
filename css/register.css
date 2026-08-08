@@ -1,0 +1,201 @@
+/* Progress Bar */
+.progress {
+  width: 100%;
+  height: 8px;
+  background-color: var(--line);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+#bar {
+  width: 33.33%;
+  height: 100%;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+/* Form Container Layout */
+.reservation-form {
+  max-width: 600px;
+  margin: 180px auto 50px auto;
+  padding: 200 20px;
+  padding-top: 120px;   /* padding function alone doesn't fix the issue */
+}
+
+.form-card {
+  background-color: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Steps Visibility */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Form Fields & Labels */
+.step h2 {
+  color: var(--ink);
+  font-family: var(--serif);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+label {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.3s, color 0.3s;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* Phone Prefix Group */
+.phone-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.phone-input-group .prefix {
+  background-color: var(--deep);
+  border: 1px solid var(--line);
+  border-right: none;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 4px 0 0 4px;
+  color: var(--ink);
+}
+
+.phone-input-group input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  flex: 1;
+}
+
+/* Inline Error Messaging */
+.error-msg {
+  color: #d93838;
+  font-size: 0.85rem;
+  display: block;
+  min-height: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: var(--wine);
+  color: #ffffff;
+  border: 1px solid var(--wine-deep);
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 16px;
+  transition: background-color 0.2s, transform 0.18s;
+}
+
+.btn:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--wine-deep);
+}
+
+.btn-sec {
+  background-color: var(--deep);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 16px;
+  transition: background-color 0.2s;
+}
+
+.btn-sec:hover {
+  background-color: var(--paper);
+}
+
+/* Greeting Block */
+.greeting-box {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: var(--deep);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.subtext {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .reservation-form {
+    margin-top: 120px;
+    padding-inline: 14px;
+  }
+  
+  .form-card {
+    padding: 20px;
+  }
+}

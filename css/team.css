@@ -1,0 +1,327 @@
+/* =====================================================
+   team.css – Athena Greek Coffee House
+   Author: Member 4
+   ===================================================== */
+
+/* ── Page Hero ── */
+.page-hero {
+  padding: 180px 28px 70px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--deep) 0%, var(--paper) 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  margin: 0 0 20px;
+  font: 400 clamp(3.2rem, 6vw, 5.5rem)/0.9 var(--serif);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.page-hero h1 em {
+  color: var(--gold);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.page-hero .lede {
+  max-width: 560px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font: 600 0.7rem var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── Flourish ── */
+.flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px auto 20px;
+  color: var(--gold);
+  font-size: 1rem;
+  opacity: 0.7;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+}
+
+.flourish span {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+  display: block;
+}
+
+.flourish span:nth-child(2) {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  background: none;
+  opacity: 1;
+  font-size: 1.2rem;
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.page-hero .flourish {
+  margin: 12px auto 16px;
+}
+
+/* ── Team Grid ── */
+.team-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 100px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* ── Team Card ── */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px 28px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 24px 48px rgba(61, 26, 12, 0.12);
+}
+
+[data-theme="dark"] .team-card:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  border-color: rgba(182, 134, 61, 0.3);
+}
+
+/* ── Team Photo ── */
+.team-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 0 18px;
+  border-radius: 50%;
+  background: var(--deep);
+  color: var(--paper);
+  flex-shrink: 0;
+  transition: background 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+
+.team-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.team-card:hover .team-photo {
+  transform: scale(1.05);
+}
+
+.team-photo svg {
+  stroke: var(--paper);
+  transition: stroke 0.3s;
+}
+
+[data-theme="dark"] .team-photo {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+}
+
+[data-theme="dark"] .team-photo svg {
+  stroke: var(--muted);
+}
+
+[data-theme="dark"] .team-photo-img {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Team Info ── */
+.team-name {
+  margin: 0 0 4px;
+  color: var(--ink);
+  font: 500 1.3rem/1.2 var(--serif);
+  transition: color 0.3s;
+}
+
+.team-card:hover .team-name {
+  color: var(--gold);
+}
+
+.team-role {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font: 600 0.7rem var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.team-contribution {
+  flex: 1;
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ── Text Link ── */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font: 600 0.75rem var(--sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.text-link:hover {
+  color: var(--wine);
+  gap: 12px;
+}
+
+.text-link span {
+  transition: transform 0.2s;
+}
+
+.text-link:hover span {
+  transform: translateX(4px);
+}
+
+/* ── Dark mode text link ── */
+[data-theme="dark"] .text-link:hover {
+  color: var(--gold-light, #d4a854);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 130px 20px 50px;
+  }
+
+  .team-section {
+    padding: 40px 20px 70px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .team-photo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .team-photo-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 120px 16px 40px;
+  }
+
+  .team-section {
+    padding: 30px 16px 60px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-card {
+    padding: 24px 20px 24px;
+  }
+
+  .team-photo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .team-photo-img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .team-photo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .flourish {
+    max-width: 200px;
+    gap: 10px;
+  }
+
+  .flourish span:nth-child(2) {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+}
+
+/* ── Print ── */
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link {
+    display: none;
+  }
+
+  .page-hero {
+    padding: 20px 0;
+    background: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .team-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .team-card:hover {
+    transform: none;
+    border-color: #ccc;
+  }
+
+  .team-photo-img {
+    border: 1px solid #ccc;
+  }
+}
+  

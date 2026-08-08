@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Athena Greek Coffee House â€” tradition, hospitality, and Greek coffee since 1965.">
+  <meta name="description" content="Athena Greek Coffee House – tradition, hospitality, and Greek coffee since 1965.">
   <meta name="theme-color" content="#fbf8f0">
   <title>Athena Greek Coffee House</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/athena-dark.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="theme-init.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme-init.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -20,18 +20,22 @@
     <div class="greek-key" aria-hidden="true"></div>
     <div class="nav-shell">
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="active" href="#home" aria-current="page">Home</a><a href="#about">About</a><a href="#menu">Menu</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservation.html">Reservation</a>
       </nav>
 
-      <a class="brand" href="#home" aria-label="Athena Greek Coffee House â€” home">
-        <span class="brand-mark" aria-hidden="true"><span class="laurel">â§</span><span class="helmet">Î‘</span><span class="laurel laurel-right">â§</span></span>
+      <a class="brand" href="index.html" aria-label="Athena Greek Coffee House – home">
+        <img class="brand-logo" src="assets/athena-dark.png" alt="Athena Logo">
         <span class="brand-name">Athena</span>
         <span class="brand-subtitle">Greek Coffee House</span>
         <span class="brand-est"><i></i>Est. 1965<i></i></span>
       </a>
 
       <nav class="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
-        <a href="#story">Our Story</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -48,68 +52,115 @@
             <path class="lamp-foot" d="M12 25.6v1.3h8v-1.3M10 28.1h12"></path>
           </svg>
         </button>
-        <button class="circle-button menu-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+        <button class="circle-button menu-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
 
     <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation" hidden>
-      <a href="#home" aria-current="page">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservation.html">Reservation</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main id="main-content">
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <img class="hero-media" src="assets/athena-hero.webp" alt="A traditional Greek coffee house with a porcelain coffee cup, water glass, and brass briki on a marble table">
+      <img class="hero-media" src="assets/athena-hero.webp" alt="Athena Greek Coffee House interior" loading="lazy">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow">Athens, Greece Â· Since 1965</p>
+        <p class="eyebrow">Athens, Greece · Since 1965</p>
         <h1 id="hero-title">Tradition<br><em>in every cup.</em></h1>
-        <div class="flourish" aria-hidden="true"><span></span>âœ¦<span></span></div>
+        <div class="flourish" aria-hidden="true"><span></span>✦<span></span></div>
         <p class="hero-copy">Experience the timeless art of Greek coffee in a place where stories are shared, friendships are made, and tradition lives on.</p>
-        <a class="button" href="#menu">Explore our menu <span aria-hidden="true">âœ£</span></a>
+        <a class="button" href="menu.html">Explore our menu <span aria-hidden="true">✣</span></a>
       </div>
-      <a class="scroll-cue" href="#about" aria-label="Scroll to learn about Athena"><span>Discover</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"></path></svg></a>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to learn about Athena">
+        <span>Discover</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"></path></svg>
+      </a>
     </section>
 
     <section class="welcome" id="about" aria-labelledby="welcome-title">
       <p class="eyebrow">A seat at our table</p>
       <h2 id="welcome-title">Coffee, company, <em>and a little time.</em></h2>
-      <p>At Athena, coffee is never hurried. It is prepared slowly, served with care, and enjoyed in the company of friends â€” just as it has been for generations.</p>
+      <p>At Athena, coffee is never hurried. It is prepared slowly, served with care, and enjoyed in the company of friends – just as it has been for generations.</p>
     </section>
 
     <section class="experience-grid" id="gallery" aria-label="Discover Athena">
       <article class="experience-card card-story" id="story">
-        <div class="card-illustration" aria-hidden="true"><svg viewBox="0 0 220 120"><path d="M28 87h164M42 82V48h136v34M53 48l57-28 57 28M66 48v34M88 48v34M110 48v34M132 48v34M154 48v34M38 87l-8 14h160l-8-14"></path><path class="steam" d="M102 100c-8-12 8-14 0-26M114 100c-8-12 8-14 0-26"></path></svg></div>
-        <p class="eyebrow">Heritage</p><h3>Our Story</h3><p>Rooted in Greek heritage and family tradition.</p><a href="#story-note">Discover more <span aria-hidden="true">âœ£</span></a>
+        <div class="card-illustration" aria-hidden="true">
+          <svg viewBox="0 0 220 120">
+            <path d="M28 87h164M42 82V48h136v34M53 48l57-28 57 28M66 48v34M88 48v34M110 48v34M132 48v34M154 48v34M38 87l-8 14h160l-8-14"></path>
+            <path class="steam" d="M102 100c-8-12 8-14 0-26M114 100c-8-12 8-14 0-26"></path>
+          </svg>
+        </div>
+        <p class="eyebrow">Heritage</p>
+        <h3>Our Story</h3>
+        <p>Rooted in Greek heritage and family tradition.</p>
+        <a href="#story-note">Discover more <span aria-hidden="true">✣</span></a>
       </article>
 
-      <article class="experience-card" id="menu">
-        <div class="card-illustration" aria-hidden="true"><svg viewBox="0 0 220 120"><path d="M68 91h82M84 51h45l-6 39H91l-7-39ZM129 61h10c18 0 18 24 1 24h-14"></path><path d="M58 89c-15-14-10-39 9-50l9 9-6 14 5 13-8 15M61 40l13-16M72 44l17-20"></path><path class="steam" d="M97 45c-9-11 9-14 1-25M111 45c-9-11 9-14 1-25"></path></svg></div>
-        <p class="eyebrow">The classics</p><h3>Our Menu</h3><p>From slow-brewed Greek coffee to traditional favorites.</p><a href="#menu-note">View menu <span aria-hidden="true">âœ£</span></a>
+      <article class="experience-card" id="menu-card">
+        <div class="card-illustration" aria-hidden="true">
+          <svg viewBox="0 0 220 120">
+            <path d="M68 91h82M84 51h45l-6 39H91l-7-39ZM129 61h10c18 0 18 24 1 24h-14"></path>
+            <path d="M58 89c-15-14-10-39 9-50l9 9-6 14 5 13-8 15M61 40l13-16M72 44l17-20"></path>
+            <path class="steam" d="M97 45c-9-11 9-14 1-25M111 45c-9-11 9-14 1-25"></path>
+          </svg>
+        </div>
+        <p class="eyebrow">The classics</p>
+        <h3>Our Menu</h3>
+        <p>From slow-brewed Greek coffee to traditional favorites.</p>
+        <a href="menu.html">View menu <span aria-hidden="true">✣</span></a>
       </article>
 
       <article class="experience-card card-visit" id="visit">
-        <div class="card-illustration" aria-hidden="true"><svg viewBox="0 0 220 120"><circle cx="110" cy="65" r="30"></circle><path d="M77 65h66M110 35v60M52 90h30V60H52v30Zm86 0h30V60h-30v30ZM58 60l-6-13h30l-6 13M144 60l-6-13h30l-6 13M45 94h44M131 94h44"></path><path d="M106 56h8v10h-8zM104 66h12l-2 8h-8z"></path></svg></div>
-        <p class="eyebrow">Kalos orisate</p><h3>Visit Us</h3><p>A warm welcome awaits in the heart of our community.</p><a href="#contact">Find us <span aria-hidden="true">âœ£</span></a>
+        <div class="card-illustration" aria-hidden="true">
+          <svg viewBox="0 0 220 120">
+            <circle cx="110" cy="65" r="30"></circle>
+            <path d="M77 65h66M110 35v60M52 90h30V60H52v30Zm86 0h30V60h-30v30ZM58 60l-6-13h30l-6 13M144 60l-6-13h30l-6 13M45 94h44M131 94h44"></path>
+            <path d="M106 56h8v10h-8zM104 66h12l-2 8h-8z"></path>
+          </svg>
+        </div>
+        <p class="eyebrow">Kalos orisate</p>
+        <h3>Visit Us</h3>
+        <p>A warm welcome awaits in the heart of our community.</p>
+        <a href="contact.html">Find us <span aria-hidden="true">✣</span></a>
       </article>
     </section>
 
     <section class="story-note" id="story-note" aria-labelledby="story-title">
       <div class="story-copy">
-        <p class="eyebrow">Our philosophy</p><h2 id="story-title">The ritual is <em>the reward.</em></h2>
+        <p class="eyebrow">Our philosophy</p>
+        <h2 id="story-title">The ritual is <em>the reward.</em></h2>
         <p>Every cup begins with finely ground coffee, cool water, and patience. Heated gently in a traditional briki, it forms the rich kaimaki that has marked a well-made Greek coffee for centuries.</p>
-        <a class="text-link" href="#contact">Share a cup with us <span aria-hidden="true">â†’</span></a>
+        <a class="text-link" href="reservation.html">Share a cup with us <span aria-hidden="true">→</span></a>
       </div>
-      <div class="story-quote" id="menu-note"><span class="quote-mark" aria-hidden="true">â€œ</span><blockquote>ÎŒÏ€Î¿Ï… Ï…Ï€Î¬ÏÏ‡ÎµÎ¹ ÎºÎ±Ï†Î­Ï‚, Ï…Ï€Î¬ÏÏ‡ÎµÎ¹ ÎºÎ±Î¹ Ï€Î±ÏÎ­Î±.</blockquote><p>Where there is coffee, there is company.</p></div>
+      <div class="story-quote">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <blockquote>Όπου υπάρχει καφές, υπάρχει και παρέα.</blockquote>
+        <p>Where there is coffee, there is company.</p>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer" id="contact">
-    <div class="footer-branch" aria-hidden="true">â§ â”€â”€â”€â”€â”€â”€â”€ â§</div><a class="footer-brand" href="#home">Athena</a>
-    <p>Greek coffee, warm company, timeless tradition.</p>
-    <div class="footer-details"><span>Monâ€“Sun Â· 7:00â€“22:00</span><a href="mailto:hello@athenacoffee.example">hello@athenacoffee.example</a><span>Athens Â· Greece</span></div>
-    <p class="copyright">Â© <span data-year></span> Athena Greek Coffee House</p>
+    <div class="footer-branch" aria-hidden="true">⧫ ─────── ⧫</div>
+    <a class="footer-brand" href="index.html">Athena</a>
+    <p>Greek coffee, Turkish Style with warm company, timeless tradition.</p>
+    <div class="footer-details">
+      <span>Mon–Sun · 7:00–22:00</span>
+      <a href="mailto:hello@athenacoffee.example">athenacoffee@gmail.com</a>
+      <span>Athens · Greece</span>
+    </div>
+    <p class="copyright">© <span data-year></span> Athena Greek Coffee House</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
