@@ -16,6 +16,11 @@
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:"Manrope","Segoe UI",sans-serif;
 }
+
+main {
+  margin-top: 85px; /* to ensure the logo doesn't cause header to clash into page text */
+  margin-bottom: 35px;
+}
 :root[data-theme="dark"] {
   color-scheme:dark;
   --paper:#1d0907;
@@ -34,6 +39,12 @@
 }
 *{
   box-sizing:border-box
+}
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 6px;
 }
 html{
   scroll-behavior:smooth;
@@ -109,6 +120,7 @@ button,a{
   max-width:1500px;
   margin:auto;
   padding:0 clamp(28px,5vw,86px)
+  
 }
 .desktop-nav{
   display:flex;
@@ -336,12 +348,30 @@ button,a{
 .menu-toggle[aria-expanded="true"] span:last-child{
   transform:translateY(-5px) rotate(-45deg)
 }
-.mobile-nav{
-  display:none
+
+@media (min-width: 921px) {
+  .mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a120c; 
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
 }
-[hidden]{
-  display:none !important
 }
+
+[hidden],
+.mobile-nav[hidden] {
+  display: none !important;
+}
+
 /* Hero */
 .hero{
   position:relative;
@@ -403,20 +433,52 @@ button,a{
   color:var(--gold-bright);
   font-weight:400
 }
-.flourish{
-  display:flex;
-  align-items:center;
-  width:290px;
-  gap:10px;
-  margin:30px 0 22px;
-  color:var(--gold-bright);
-  font-size:.7rem
+
+/* ── Flourish ── */
+.flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px auto 20px;
+  color: var(--gold);
+  font-size: 1rem;
+  opacity: 0.7;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
 }
-.flourish span{
-  flex:1;
-  height:1px;
-  background:currentColor
+
+.flourish span {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+  display: block;
 }
+
+.flourish span:nth-child(2) {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  background: none;
+  opacity: 1;
+  font-size: 1.2rem;
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.hero .flourish {
+  max-width: 320px;
+  color: var(--gold-bright);
+  opacity: 0.8;
+}
+
+.hero .flourish span {
+  background: var(--gold-bright);
+  opacity: 0.5;
+}
+
 .hero-copy{
   max-width:510px;
   margin:0 0 26px;
@@ -939,3 +1001,4 @@ button,a{
     transition-duration:.01ms!important
   }
 }
+
