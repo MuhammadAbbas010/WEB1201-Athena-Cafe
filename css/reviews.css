@@ -144,7 +144,12 @@
   color: var(--ink);
   font: 600 0.8rem var(--sans);
 }
-
+.brand-name{
+  margin-top:-2px;
+  font:500 clamp(2.6rem,3.4vw,4rem)/.9 var(--serif);
+  letter-spacing:.06em;
+  text-transform:uppercase
+}
 .form-input {
   width: 100%;
   padding: 12px 14px;
