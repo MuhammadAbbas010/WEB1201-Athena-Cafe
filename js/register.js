@@ -1,24 +1,32 @@
-let currentStep = 0;
-const steps = document.querySelectorAll(".step");
-const bar = document.getElementById("bar");
-let registeredUser = {};
+// =====================================================
+// register.js – Athena Registration & Login - Abbas
+// =====================================================
 
-// updates step visibility and fills progress bar
-function updateStepView() {
-  steps.forEach((s, index) => {
-    s.classList.toggle("active", index === currentStep);
+//mobile disply compatibility
+const menuBtn = document.getElementById("menu-toggle") || document.querySelector("[data-menu-toggle]");
+const mobileNav = document.getElementById("mobile-nav");
+
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener("click", () => {
+    mobileNav.toggleAttribute("hidden");
   });
-  if (bar) {
-    bar.style.width = ((currentStep + 1) / 3 * 100) + "%";
-  }
 }
+const themeBtn = document.getElementById("theme-toggle") || document.querySelector("[data-theme-toggle]");
 
-// wipes error text across steps
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+  });
+}
+// Clears the  error texts
+
 function clearErrors() {
   document.querySelectorAll(".error-msg").forEach(err => err.textContent = "");
 }
 
-// checks step 1 inputs
+// Step 1 Validation
 function validateStep1() {
   clearErrors();
   let isValid = true;
@@ -27,6 +35,7 @@ function validateStep1() {
   const lname = document.getElementById("lname").value.trim();
   const email = document.getElementById("email").value.trim();
 
+  // Name regex: letters, spaces, hyphens only
   const namePattern = /^[A-Za-z\s-]+$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -46,7 +55,7 @@ function validateStep1() {
   return isValid;
 }
 
-// blocks non-digit typing for phone field
+// Restrict Phone Field to Digits Only
 const phoneInput = document.getElementById("phone");
 if (phoneInput) {
   phoneInput.addEventListener("input", (e) => {
@@ -54,7 +63,7 @@ if (phoneInput) {
   });
 }
 
-// checks step 2 inputs
+// Step 2 Validation
 function validateStep2() {
   clearErrors();
   let isValid = true;
@@ -63,7 +72,7 @@ function validateStep2() {
   const dob = document.getElementById("dob").value;
   const coffee = document.getElementById("coffee").value;
 
-  // greek mobile check
+  // Greek mobile numbers start with 6 and total exactly 10 digits
   const greekPhonePattern = /^6\d{9}$/;
 
   if (!phone || !greekPhonePattern.test(phone)) {
@@ -77,12 +86,12 @@ function validateStep2() {
   }
 
   if (dob) {
-    const birthYear = new Date(dob).getFullYear();
-    if (birthYear < 1931 || birthYear > 2014) {
-      document.getElementById("dob-err").textContent = "Please enter a birth year between 1931 and 2014.";
-      isValid = false;
-    }
+  const birthYear = new Date(dob).getFullYear();
+  if (birthYear < 1931 || birthYear > 2014) {
+    document.getElementById("dob-err").textContent = "Please enter a birth year between 1931 and 2014.";
+    isValid = false;
   }
+}
 
   if (!coffee) {
     document.getElementById("coffee-err").textContent = "Please pick a preferred coffee.";
@@ -92,7 +101,7 @@ function validateStep2() {
   return isValid;
 }
 
-// checks step 3 inputs
+// Step 3 Validation
 function validateStep3() {
   clearErrors();
   let isValid = true;
@@ -119,7 +128,7 @@ function validateStep3() {
   return isValid;
 }
 
-// step navigation buttons
+// Button Handlers
 document.getElementById("n1").onclick = () => {
   if (validateStep1()) {
     currentStep = 1;
@@ -143,7 +152,7 @@ document.querySelectorAll(".back").forEach((btn) => {
   };
 });
 
-// submit handler
+// Final Registration Handler
 document.getElementById("register").onclick = () => {
   if (validateStep3()) {
     registeredUser.fname = document.getElementById("fname").value.trim();
@@ -155,7 +164,7 @@ document.getElementById("register").onclick = () => {
   }
 };
 
-// login check + greeting
+// Login Handler with Rubric Greeting
 document.getElementById("loginBtn").onclick = () => {
   const loginEmail = document.getElementById("loginEmail").value.trim();
   const loginPass = document.getElementById("loginPass").value;
@@ -169,7 +178,7 @@ document.getElementById("loginBtn").onclick = () => {
   }
 };
 
-// set current year in footer
+// Set footer year
 const yearSpan = document.getElementById("current-year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
