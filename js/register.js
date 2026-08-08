@@ -1,13 +1,9 @@
-// =====================================================
-// register.js – Athena Registration & Login
-// =====================================================
-
 let currentStep = 0;
 const steps = document.querySelectorAll(".step");
 const bar = document.getElementById("bar");
 let registeredUser = {};
 
-// Update display step & progress bar
+// updates step visibility and fills progress bar
 function updateStepView() {
   steps.forEach((s, index) => {
     s.classList.toggle("active", index === currentStep);
@@ -17,12 +13,12 @@ function updateStepView() {
   }
 }
 
-// Clear error texts
+// wipes error text across steps
 function clearErrors() {
   document.querySelectorAll(".error-msg").forEach(err => err.textContent = "");
 }
 
-// Step 1 Validation
+// checks step 1 inputs
 function validateStep1() {
   clearErrors();
   let isValid = true;
@@ -31,7 +27,6 @@ function validateStep1() {
   const lname = document.getElementById("lname").value.trim();
   const email = document.getElementById("email").value.trim();
 
-  // Name regex: letters, spaces, hyphens only
   const namePattern = /^[A-Za-z\s-]+$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -51,7 +46,7 @@ function validateStep1() {
   return isValid;
 }
 
-// Restrict Phone Field to Digits Only
+// blocks non-digit typing for phone field
 const phoneInput = document.getElementById("phone");
 if (phoneInput) {
   phoneInput.addEventListener("input", (e) => {
@@ -59,7 +54,7 @@ if (phoneInput) {
   });
 }
 
-// Step 2 Validation
+// checks step 2 inputs
 function validateStep2() {
   clearErrors();
   let isValid = true;
@@ -68,7 +63,7 @@ function validateStep2() {
   const dob = document.getElementById("dob").value;
   const coffee = document.getElementById("coffee").value;
 
-  // Greek mobile numbers start with 6 and total exactly 10 digits
+  // greek mobile check
   const greekPhonePattern = /^6\d{9}$/;
 
   if (!phone || !greekPhonePattern.test(phone)) {
@@ -82,12 +77,12 @@ function validateStep2() {
   }
 
   if (dob) {
-  const birthYear = new Date(dob).getFullYear();
-  if (birthYear < 1931 || birthYear > 2014) {
-    document.getElementById("dob-err").textContent = "Please enter a birth year between 1931 and 2014.";
-    isValid = false;
+    const birthYear = new Date(dob).getFullYear();
+    if (birthYear < 1931 || birthYear > 2014) {
+      document.getElementById("dob-err").textContent = "Please enter a birth year between 1931 and 2014.";
+      isValid = false;
+    }
   }
-}
 
   if (!coffee) {
     document.getElementById("coffee-err").textContent = "Please pick a preferred coffee.";
@@ -97,7 +92,7 @@ function validateStep2() {
   return isValid;
 }
 
-// Step 3 Validation
+// checks step 3 inputs
 function validateStep3() {
   clearErrors();
   let isValid = true;
@@ -124,7 +119,7 @@ function validateStep3() {
   return isValid;
 }
 
-// Button Handlers
+// step navigation buttons
 document.getElementById("n1").onclick = () => {
   if (validateStep1()) {
     currentStep = 1;
@@ -148,7 +143,7 @@ document.querySelectorAll(".back").forEach((btn) => {
   };
 });
 
-// Final Registration Handler
+// submit handler
 document.getElementById("register").onclick = () => {
   if (validateStep3()) {
     registeredUser.fname = document.getElementById("fname").value.trim();
@@ -160,7 +155,7 @@ document.getElementById("register").onclick = () => {
   }
 };
 
-// Login Handler with Rubric Greeting
+// login check + greeting
 document.getElementById("loginBtn").onclick = () => {
   const loginEmail = document.getElementById("loginEmail").value.trim();
   const loginPass = document.getElementById("loginPass").value;
@@ -174,7 +169,7 @@ document.getElementById("loginBtn").onclick = () => {
   }
 };
 
-// Set footer year
+// set current year in footer
 const yearSpan = document.getElementById("current-year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
