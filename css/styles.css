@@ -349,7 +349,8 @@ button,a{
   transform:translateY(-5px) rotate(-45deg)
 }
 
-.mobile-nav {
+@media (min-width: 921px) {
+  .mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -364,9 +365,11 @@ button,a{
   gap: 24px;
   padding: 40px;
 }
+}
 
-[hidden]{
-  display:none !important
+[hidden],
+.mobile-nav[hidden] {
+  display: none !important;
 }
 
 /* Hero */
