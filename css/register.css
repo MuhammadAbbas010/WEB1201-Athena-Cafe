@@ -19,7 +19,8 @@
 .reservation-form {
   max-width: 600px;
   margin: 180px auto 50px auto;
-  padding: 120 20px;
+  padding: 200 20px;
+  padding-top: 120px;   /* padding function alone doesn't fix the issue */
 }
 
 .form-card {
