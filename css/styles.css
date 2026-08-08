@@ -16,6 +16,11 @@
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:"Manrope","Segoe UI",sans-serif;
 }
+
+main {
+  margin-top: 90px; /* to ensure the logo doesn't cause header to clash into page text */
+  margin-bottom: 35px;
+}
 :root[data-theme="dark"] {
   color-scheme:dark;
   --paper:#1d0907;
@@ -36,8 +41,8 @@
   box-sizing:border-box
 }
 .brand-logo {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   display: block;
   margin: 0 auto 6px;
 }
