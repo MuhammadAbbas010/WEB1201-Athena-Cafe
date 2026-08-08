@@ -1,8 +1,21 @@
 // =====================================================
-// register.js – Athena Registration & Login - Abbas
+// register.js – Athena Registration & Login
 // =====================================================
+let currentStep = 0;
+const steps = document.querySelectorAll(".step");
+const bar = document.getElementById("bar");
+let registeredUser = {};
 
-//mobile disply compatibility
+// Update display step & progress bar
+function updateStepView() {
+  steps.forEach((s, index) => {
+    s.classList.toggle("active", index === currentStep);
+  });
+  if (bar) {
+    bar.style.width = ((currentStep +1 ) / 3 * 100) + "%";
+  }
+}
+// mobile display compatibility 
 const menuBtn = document.getElementById("menu-toggle") || document.querySelector("[data-menu-toggle]");
 const mobileNav = document.getElementById("mobile-nav");
 
@@ -13,15 +26,7 @@ if (menuBtn && mobileNav) {
 }
 const themeBtn = document.getElementById("theme-toggle") || document.querySelector("[data-theme-toggle]");
 
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", newTheme);
-  });
-}
-// Clears the  error texts
-
+// Clear error texts
 function clearErrors() {
   document.querySelectorAll(".error-msg").forEach(err => err.textContent = "");
 }
@@ -88,7 +93,7 @@ function validateStep2() {
   if (dob) {
   const birthYear = new Date(dob).getFullYear();
   if (birthYear < 1931 || birthYear > 2014) {
-    document.getElementById("dob-err").textContent = "Please enter a birth year between 1931 and 2014.";
+    document.getElementById("dob-err").textContent = "Please enter a birth year of 1931 or later, and earlier than 2014";
     isValid = false;
   }
 }
