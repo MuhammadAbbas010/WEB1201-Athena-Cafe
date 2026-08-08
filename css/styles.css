@@ -18,7 +18,7 @@
 }
 
 main {
-  margin-top: 90px; /* to ensure the logo doesn't cause header to clash into page text */
+  margin-top: 85px; /* to ensure the logo doesn't cause header to clash into page text */
   margin-bottom: 35px;
 }
 :root[data-theme="dark"] {

@@ -168,3 +168,8 @@ select:focus {
   cursor: pointer;
   color: #d1c7b7;
 }
+
+.reservation-form{
+margin-top: 250px;
+margin-bottom: 50px;
+}
