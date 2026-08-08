@@ -5,7 +5,7 @@
 
 /* ── Page Hero ── */
 .page-hero {
-  padding: 160px 28px 70px;
+  padding: 180px 28px 70px;
   text-align: center;
   background: linear-gradient(180deg, var(--deep) 0%, var(--paper) 100%);
   border-bottom: 1px solid var(--line);
