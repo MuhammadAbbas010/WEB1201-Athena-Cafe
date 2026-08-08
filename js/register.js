@@ -81,6 +81,14 @@ function validateStep2() {
     isValid = false;
   }
 
+  if (dob) {
+  const birthYear = new Date(dob).getFullYear();
+  if (birthYear < 1931) {
+    document.getElementById("dob-err").textContent = "Please enter a birth year of 1931 or later.";
+    isValid = false;
+  }
+}
+
   if (!coffee) {
     document.getElementById("coffee-err").textContent = "Please pick a preferred coffee.";
     isValid = false;
