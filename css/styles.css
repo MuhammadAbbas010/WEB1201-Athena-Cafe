@@ -35,6 +35,12 @@
 *{
   box-sizing:border-box
 }
+.brand-logo {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 0 auto 6px;
+}
 html{
   scroll-behavior:smooth;
   scroll-padding-top:150px
@@ -109,6 +115,7 @@ button,a{
   max-width:1500px;
   margin:auto;
   padding:0 clamp(28px,5vw,86px)
+  
 }
 .desktop-nav{
   display:flex;
