@@ -735,7 +735,7 @@ main {
 }
 .footer-newsletter input {
   padding: 8px 12px;
-  color: var(--paper);
+  color: var(--gold-pale);
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -746,7 +746,7 @@ main {
 .footer-newsletter input:focus { border-color: var(--gold); }
 .footer-newsletter button {
   padding: 8px 12px;
-  color: var(--paper);
+  color: var(--gold);
   background-color: var(--wine);
   border: 1px solid var(--gold);
   border-radius: 4px;
