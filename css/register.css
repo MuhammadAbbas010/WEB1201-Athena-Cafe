@@ -166,3 +166,6 @@ select:focus {
     padding: 20px;
   }
 }
+.reservation-form{
+  padding-top: 135px;
+}
