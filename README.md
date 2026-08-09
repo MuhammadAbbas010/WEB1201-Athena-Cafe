@@ -15,6 +15,9 @@
 | :---: | :---: |
 | ![Desktop View](assets/athena-dark.png) | ![Mobile View](assets/athena-dark.png) |
 
+
+| ![Hero Page](/screenshots/Hero-readme.png)|
+
 ---
 
 ## ✨ Features
