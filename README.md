@@ -9,7 +9,7 @@
 
 A responsive, multi-page site for a Greek coffee house, built with vanilla HTML5, CSS custom properties, and native Web Components. Made for the WEB1201 final assessment.
 
-## Preview
+## Preview (click to view) 
 
 <details open>
 <summary>Landing page</summary>
