@@ -3,6 +3,7 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+<!-- TODO(human): no LICENSE file exists in the repo yet, so the MIT badge below links nowhere. Either add a LICENSE file or drop this badge. -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 
@@ -50,7 +51,7 @@
 </details>
 
 <details>
-<summary><b>📷 Slide 3: Reservation Page/b></summary>
+<summary><b>📷 Slide 3: Reservation Page</b></summary>
 <br>
 <img src="screenshots/reservation.png" alt="Reservation and Login Page" width="100%" max-height="400px">
 <p align="left"><i>Reserve your seat before it's too late!</i></p>
@@ -80,18 +81,50 @@
 ### 📂 File Directories
 
 ```text
-WEB1201-WEB-FUNDAMENTALS-FINAL-PROJECT/
-├── assets/                  # Brand assets, logos, and images
+WEB1201-Athena-Cafe/
+├── assets/                  # Brand assets, logos, and menu images
 ├── css/
-│   ├── styles.css           # Global stylesheets, layout grids, variables
-│   └── register.css         # Page-specific reservation styling
+│   ├── styles.css            # Global stylesheets, layout grids, variables
+│   ├── register.css          # Reservation page styling
+│   ├── menu.css               # Menu page styling
+│   ├── contact.css            # Contact page styling
+│   ├── reviews.css            # Reviews page styling
+│   └── team.css               # Team page styling
 ├── js/
-│   ├── script.js            # Core interactive scripts & theme toggles
-│   ├── register.js          # Multi-step form logic & validation
-│   └── footer-component.js  # Reusable <site-footer> Web Component
-├── index.html               # Home Page
-├── menu.html                # Coffee & Pastry Menu
-├── reservation.html         # Multi-step Reservation Page
-├── reviews.html             # Customer Testimonials
-├── team.html                # Staff info
-└── contact.html             # contact us page
+│   ├── script.js              # Core interactive scripts & theme toggles
+│   ├── theme-init.js          # Applies saved theme before first paint
+│   ├── register.js            # Multi-step reservation form logic & validation
+│   ├── footer-component.js    # Reusable <site-footer> Web Component
+│   ├── catalogue.js           # Menu catalogue rendering/filtering
+│   ├── contact.js             # Contact form logic
+│   └── reviews.js             # Reviews page logic
+├── portfolio/                 # Individual team member portfolio pages
+│   ├── member1.html … member4.html
+│   ├── css/portfolio.css
+│   ├── js/portfolio.js
+│   └── portfolioImages/, assets/
+├── screenshots/                # README preview images
+├── index.html                  # Home page
+├── menu.html                   # Coffee & pastry menu
+├── reservation.html            # Multi-step reservation & login page
+├── reviews.html                 # Customer testimonials
+├── team.html                    # Staff info
+└── contact.html                  # Contact us page
+```
+
+## 🚀 Getting Started
+
+This is a static site with no build step or dependencies — just open it in a browser:
+
+```bash
+git clone https://github.com/muhammadabbas010/web1201-athena-cafe.git
+cd web1201-athena-cafe
+```
+
+Then either open `index.html` directly in your browser, or serve it locally (recommended, so relative paths and fonts load correctly):
+
+```bash
+npx serve .
+# or
+python3 -m http.server
+```
